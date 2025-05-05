@@ -19,7 +19,7 @@ async function bootstrap() {
   SwaggerModule.setup('api', app, document);
 
   app.enableCors({
-    origin: 'http://localhost:3000',
+    origin: 'https://chatgpt-front-tau.vercel.app',
     methods: 'GET,HEAD,POST,PUT,DELETE,OPTIONS',
     credentials: true,
   });
