@@ -1,17 +1,9 @@
 import { Injectable } from '@nestjs/common';
 import axios from 'axios';
 import dotenv from 'dotenv';
+import { ChatGptResponse } from '../../domain/interfaces/chat-gpt-response.interface';
 
 dotenv.config();
-
-interface ChatGptResponse {
-  choices: {
-    message: {
-      role: string;
-      content: string;
-    };
-  }[];
-}
 
 @Injectable()
 export class ChatService {

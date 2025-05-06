@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import admin from '../../shared/config/firebase/firebase';
+import admin from '../../../../shared/config/firebase/firebase';
 
 const db = admin.firestore();
 export interface ChatMessage {
