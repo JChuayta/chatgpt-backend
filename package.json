@@ -28,6 +28,7 @@
     "class-validator": "^0.14.2",
     "dotenv": "^16.5.0",
     "firebase-admin": "^13.3.0",
+    "openai": "^4.103.0",
     "reflect-metadata": "^0.2.2",
     "rxjs": "^7.8.1"
   },

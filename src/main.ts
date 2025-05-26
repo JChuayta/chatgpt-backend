@@ -1,16 +1,15 @@
 import { NestFactory } from '@nestjs/core';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
-import { ChatModule } from './modules/chat.module';
-import { FirebaseAuthGuard } from './modules/chat/infraestructure/guards/firebase-auth.guard';
+import { WithoutFirebaseModule } from './modules/without-firebase/without-firebase.module';
 
 async function bootstrap() {
-  const app = await NestFactory.create(ChatModule);
-  app.useGlobalGuards(new FirebaseAuthGuard());
+  const app = await NestFactory.create(WithoutFirebaseModule);
+  // app.useGlobalGuards(new FirebaseAuthGuard());
   const config = new DocumentBuilder()
     .setTitle('Chat API')
     .setDescription('API para enviar mensajes a ChatGPT')
     .setVersion('1.0')
-    .addBearerAuth()
+    // .addBearerAuth()
     .build();
 
   const document = SwaggerModule.createDocument(app, config);
